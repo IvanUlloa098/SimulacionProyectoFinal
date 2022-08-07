@@ -10,7 +10,7 @@
 	<Name><![CDATA[SimulacionProyectoFinal]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[simulacionproyectofinal]]></JavaPackageName>
-	<ModelTimeUnit><![CDATA[Hour]]></ModelTimeUnit>
+	<ModelTimeUnit><![CDATA[Minute]]></ModelTimeUnit>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
@@ -84,11 +84,11 @@
 					<OccurrenceDate>1659686400000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
 						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
@@ -113,7 +113,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659732760903</Id>
 					<Name><![CDATA[paisOrigen]]></Name>
-					<X>40</X><Y>570</Y>
+					<X>20</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -148,7 +148,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659801923646</Id>
 					<Name><![CDATA[paisDestino]]></Name>
-					<X>140</X><Y>570</Y>
+					<X>120</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -183,7 +183,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659802688953</Id>
 					<Name><![CDATA[pesosOrigen]]></Name>
-					<X>350</X><Y>570</Y>
+					<X>330</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -217,7 +217,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659803088658</Id>
 					<Name><![CDATA[pesosDestino]]></Name>
-					<X>450</X><Y>570</Y>
+					<X>430</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -253,7 +253,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659808041291</Id>
 					<Name><![CDATA[sectorGuayas]]></Name>
-					<X>240</X><Y>570</Y>
+					<X>220</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -276,7 +276,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659808828088</Id>
 					<Name><![CDATA[pesosSector]]></Name>
-					<X>550</X><Y>570</Y>
+					<X>530</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -302,7 +302,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659820848342</Id>
 					<Name><![CDATA[resultadosPaisOrigen]]></Name>
-					<X>40</X><Y>590</Y>
+					<X>20</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -319,7 +319,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659820892613</Id>
 					<Name><![CDATA[resultadosPaisDestino]]></Name>
-					<X>190</X><Y>590</Y>
+					<X>170</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -336,7 +336,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659820978134</Id>
 					<Name><![CDATA[resultadosSectorOrigen]]></Name>
-					<X>340</X><Y>590</Y>
+					<X>320</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -351,7 +351,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1659821052991</Id>
 					<Name><![CDATA[resultadosSectorDestino]]></Name>
-					<X>500</X><Y>590</Y>
+					<X>480</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -359,10 +359,50 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double[]]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[new double[] {
-
-}]]></Code>
+							<Code><![CDATA[new double[] {0, 0, 0, 0, 0, 0, 0, 0}]]></Code>
 						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1659884846909</Id>
+					<Name><![CDATA[capacidad]]></Name>
+					<X>620</X><Y>740</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[3]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1659885453221</Id>
+					<Name><![CDATA[clienteID]]></Name>
+					<X>640</X><Y>760</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[-1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1659890775681</Id>
+					<Name><![CDATA[clienteSolicitud]]></Name>
+					<X>720</X><Y>760</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[String[]]]></Type>        
 					</Properties>
 				</Variable>
 			</Variables>
@@ -397,7 +437,7 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-70</X><Y>0</Y></Point>
+						<Point><X>-60</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1316,27 +1356,23 @@
 					<ReturnType><![CDATA[String[]]]></ReturnType>
 					<Id>1659801202358</Id>
 					<Name><![CDATA[seleccionarOrigen]]></Name>
-					<X>40</X><Y>550</Y>
+					<X>20</X><Y>720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[int pick;
+					<Body><![CDATA[int country, place;
 double transactionAmount;
-String country, place;
 String[] res;
 
 transactionAmount = normal(500, 200);
 transactionAmount = Math.floor(transactionAmount*100)/100;
 transactionAmount = Math.abs(transactionAmount);
 
-pick = Integer.parseInt(randomFrom(pesosOrigen));
-country = paisOrigen[pick];
+country = Integer.parseInt(randomFrom(pesosOrigen));
+place = Integer.parseInt(randomFrom(pesosSector));
 
-pick = Integer.parseInt(randomFrom(pesosSector));
-place = sectorGuayas[pick];
-
-res = new String[] {country, transactionAmount+"", place};
+res = new String[] {country+"", transactionAmount+"", place+""};
 
 return res;]]></Body>
 				</Function>
@@ -1345,36 +1381,73 @@ return res;]]></Body>
 					<ReturnType><![CDATA[String[]]]></ReturnType>
 					<Id>1659805857525</Id>
 					<Name><![CDATA[seleccionarDestino]]></Name>
-					<X>170</X><Y>550</Y>
+					<X>150</X><Y>720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[int pick;
+					<Body><![CDATA[int country, place;
 double transactionAmount;
 String[] res;
-String country, place;
 
 transactionAmount = normal(300, 100);
 transactionAmount = Math.floor(transactionAmount*100)/100;
 transactionAmount = Math.abs(transactionAmount);
 
-pick = Integer.parseInt(randomFrom(pesosDestino));
-country = paisDestino[pick];
+country = Integer.parseInt(randomFrom(pesosDestino));
+place = Integer.parseInt(randomFrom(pesosSector));
 
-pick = Integer.parseInt(randomFrom(pesosSector));
-place = sectorGuayas[pick];
-
-res = new String[] {country, transactionAmount+"", place};
+res = new String[] {country+"", transactionAmount+"", place+""};
 
 return res;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1659891214790</Id>
+					<Name><![CDATA[guardarInfoOrigen]]></Name>
+					<X>280</X><Y>720</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[double cantidad;
+int pickSector, pickPais;
+
+cantidad = Double.parseDouble(clienteSolicitud[1]);
+pickSector = Integer.parseInt(clienteSolicitud[2]);
+pickPais = Integer.parseInt(clienteSolicitud[0]);
+
+resultadosPaisOrigen[pickPais] += cantidad;
+resultadosSectorOrigen[pickSector] += cantidad;
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1659893250552</Id>
+					<Name><![CDATA[guardarInfoDestino]]></Name>
+					<X>410</X><Y>720</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[double cantidad;
+int pickSector, pickPais;
+
+cantidad = Double.parseDouble(clienteSolicitud[1]);
+pickSector = Integer.parseInt(clienteSolicitud[2]);
+pickPais = Integer.parseInt(clienteSolicitud[0]);
+
+resultadosPaisDestino[pickPais] += cantidad;
+resultadosSectorDestino[pickSector] += cantidad;]]></Body>
 				</Function>
 			</Functions>
 			<Schedules>
 				<Schedule>
 					<Id>1659630182464</Id>
-					<Name><![CDATA[solicitarCalendario]]></Name>
-					<X>10</X><Y>190</Y>
+					<Name><![CDATA[solicitarLlegada]]></Name>
+					<X>20</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1436,7 +1509,7 @@ return res;]]></Body>
 				<EmbeddedObject>
 					<Id>1659630052882</Id>
 					<Name><![CDATA[ingreso]]></Name>
-					<X>0</X><Y>140</Y>
+					<X>10</X><Y>140</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1474,7 +1547,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[rateSchedule]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[solicitarCalendario]]></Code>
+								<Code><![CDATA[solicitarLlegada]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -1775,14 +1848,11 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[traceln("entra caja");]]></Code>
-							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1827,7 +1897,7 @@ return res;]]></Body>
 				<EmbeddedObject>
 					<Id>1659630873606</Id>
 					<Name><![CDATA[empleados]]></Name>
-					<X>60</X><Y>450</Y>
+					<X>40</X><Y>620</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1853,7 +1923,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[5]]></Code>
+								<Code><![CDATA[4]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2088,7 +2158,7 @@ return res;]]></Body>
 				<EmbeddedObject>
 					<Id>1659630910758</Id>
 					<Name><![CDATA[computadoras]]></Name>
-					<X>60</X><Y>510</Y>
+					<X>40</X><Y>680</Y>
 					<Label><X>-25</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2613,7 +2683,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2636,6 +2706,15 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[int pick1, pick2;
+
+clienteSolicitud = seleccionarOrigen();
+pick1 = Integer.parseInt(clienteSolicitud[2]);
+pick2 = Integer.parseInt(clienteSolicitud[0]);
+
+traceln("RECEBIR> Datos Cliente #"+clienteID+":\n "+sectorGuayas[pick1]+"| "+paisOrigen[pick2]+"| $"+clienteSolicitud[1]);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -3107,12 +3186,24 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[guardarInfoOrigen();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onReleaseUnit]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[int pick1, pick2;
+
+clienteSolicitud = seleccionarOrigen();
+pick1 = Integer.parseInt(clienteSolicitud[2]);
+pick2 = Integer.parseInt(clienteSolicitud[0]);
+
+traceln("RECIBIR> Transaccion realizada Cliente #"+clienteID+":\n"+sectorGuayas[pick1]+"| "+paisOrigen[pick2]+"| $"+clienteSolicitud[1])]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -3185,6 +3276,9 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("Cliente #"+clienteID+" sale de la caja");]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3321,7 +3415,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3344,6 +3438,10 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[clienteID++;
+traceln("Cliente #"+clienteID+" ingresa a la caja");]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -3652,18 +3750,15 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit1]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("Cliente #"+clienteID+" no realiza transaccion");]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit2]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[traceln("Transaccion remesas");]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit3]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[traceln("No realiza transaccion");]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
@@ -3963,7 +4058,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3986,6 +4081,15 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[int pick1, pick2;
+
+clienteSolicitud = seleccionarDestino();
+pick1 = Integer.parseInt(clienteSolicitud[2]);
+pick2 = Integer.parseInt(clienteSolicitud[0]);
+
+traceln("ENVIAR> Datos Cliente #"+clienteID+":\n "+sectorGuayas[pick1]+"| "+paisDestino[pick2]+"| $"+clienteSolicitud[1]);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -4385,6 +4489,9 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("ENVIAR> Cliente #"+clienteID+" sale de la caja");]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -4559,12 +4666,20 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[traceln("Se notifica del envio")]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[int pick1, pick2;
+
+clienteSolicitud = seleccionarDestino();
+pick1 = Integer.parseInt(clienteSolicitud[2]);
+pick2 = Integer.parseInt(clienteSolicitud[0]);
+
+guardarInfoDestino();
+traceln("Se notifica del envio");
+traceln("ENVIAR> Transaccion realizada Cliente #"+clienteID+":\n "+sectorGuayas[pick1]+"| "+paisDestino[pick2]+"| $"+clienteSolicitud[1]+"\n\n");]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -4668,6 +4783,9 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("ENVIAR> Cliente #"+clienteID+" regresa a la caja")]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -5226,7 +5344,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[main.capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -5332,7 +5450,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[main.capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -5438,7 +5556,7 @@ return res;]]></Body>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[main.capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -5461,12 +5579,6 @@ return res;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[String[] res;
-
-res = main.seleccionarOrigen();
-traceln("Origen: "+res[0]+" Cantidad: $"+res[1]+" Sector: "+res[2]);]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -5969,7 +6081,7 @@ traceln("Origen: "+res[0]+" Cantidad: $"+res[1]+" Sector: "+res[2]);]]></Code>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[main.capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6075,7 +6187,7 @@ traceln("Origen: "+res[0]+" Cantidad: $"+res[1]+" Sector: "+res[2]);]]></Code>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[main.capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6181,7 +6293,7 @@ traceln("Origen: "+res[0]+" Cantidad: $"+res[1]+" Sector: "+res[2]);]]></Code>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[4]]></Code>
+								<Code><![CDATA[main.capacidad]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
