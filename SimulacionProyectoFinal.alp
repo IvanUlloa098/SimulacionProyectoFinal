@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.12.202205250455" AlpVersion="8.7.5">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.12.202205250418" AlpVersion="8.7.5">
 <Model>
 	<Id>1659628838094</Id>
 	<Name><![CDATA[SimulacionProyectoFinal]]></Name>
@@ -403,6 +403,36 @@
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[String[]]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1660064770180</Id>
+					<Name><![CDATA[envio_dia]]></Name>
+					<X>840</X><Y>750</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1660072337778</Id>
+					<Name><![CDATA[recibir_dia]]></Name>
+					<X>930</X><Y>750</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 			</Variables>
@@ -1350,6 +1380,40 @@
 					</Points>
 				</Connector>
 			</Connectors>
+			<Events>
+				<Event>
+					<Id>1660064843668</Id>
+					<Name><![CDATA[event]]></Name>
+					<X>840</X><Y>720</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1660118400000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[envio_dia=0.0;
+recibir_dia=0.0]]></Action>
+				</Event>
+			</Events>
 			<Functions>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -2713,7 +2777,8 @@ clienteSolicitud = seleccionarOrigen();
 pick1 = Integer.parseInt(clienteSolicitud[2]);
 pick2 = Integer.parseInt(clienteSolicitud[0]);
 
-traceln("RECEBIR> Datos Cliente #"+clienteID+":\n "+sectorGuayas[pick1]+"| "+paisOrigen[pick2]+"| $"+clienteSolicitud[1]);]]></Code>
+traceln("RECEBIR> Datos Cliente #"+clienteID+":\n "+sectorGuayas[pick1]+"| "+paisOrigen[pick2]+"| $"+clienteSolicitud[1]);
+recibir_dia+=Double.parseDouble(clienteSolicitud[1])]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4088,7 +4153,8 @@ clienteSolicitud = seleccionarDestino();
 pick1 = Integer.parseInt(clienteSolicitud[2]);
 pick2 = Integer.parseInt(clienteSolicitud[0]);
 
-traceln("ENVIAR> Datos Cliente #"+clienteID+":\n "+sectorGuayas[pick1]+"| "+paisDestino[pick2]+"| $"+clienteSolicitud[1]);]]></Code>
+traceln("ENVIAR> Datos Cliente #"+clienteID+":\n "+sectorGuayas[pick1]+"| "+paisDestino[pick2]+"| $"+clienteSolicitud[1]);
+envio_dia+=Double.parseDouble(clienteSolicitud[1])]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4927,6 +4993,208 @@ traceln("ENVIAR> Transaccion realizada Cliente #"+clienteID+":\n "+sectorGuayas[
 					<Z>0</Z>
 					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
 
+			<Presentation>
+    			<TimePlot>
+					<Id>1660063328137</Id>
+					<Name><![CDATA[plot]]></Name>
+					<X>100</X><Y>420</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1660118400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>440</Width>
+					<Height>270</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>360</Width>
+						<Height>180</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>DAY</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Total envios por dia]]></Title>
+					<Id>0</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[envio_dia]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Total recibos por dia]]></Title>
+					<Id>0</Id>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-16776961</Color>
+					<Expression2><![CDATA[recibir_dia]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>100</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[10]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
+    			<BarChart>
+					<Id>1660072615127</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>520</X><Y>450</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1660118400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>890</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>810</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[0]]]></Expression>
+					<Color>-4565549</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[ESTADOS UNIDOS]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[1]]]></Expression>
+					<Color>-2354116</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[ESPAÑA]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[2]]]></Expression>
+					<Color>-10496</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[ITALIA]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[3]]]></Expression>
+					<Color>-6632142</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[MÉXICO]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[4]]]></Expression>
+					<Color>-14774017</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[CHILE]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[5]]]></Expression>
+					<Color>-3137392</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[PERÚ]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[6]]]></Expression>
+					<Color>-32944</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[REINO UNIDO]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[7]]]></Expression>
+					<Color>-13447886</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[ALEMANIA]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[8]]]></Expression>
+					<Color>-9404272</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[SUIZA]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[resultadosPaisOrigen[9]]]></Expression>
+					<Color>-7667573</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[CANADÁ]]></Title>
+					</DataItem>
+					<ScaleFromExpression><![CDATA[0]]></ScaleFromExpression>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</BarChart>
+			</Presentation>
 
 				</Level>
 			</Presentation>
